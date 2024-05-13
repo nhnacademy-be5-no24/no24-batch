@@ -12,7 +12,8 @@
 클라우드 서비스를 적용한 Spring boot 웹 도서 쇼핑몰 서비스
 
 ## System Architecture
-![system-architecture.png](./img/system-architecture.png)
+![system-architecture](https://github.com/nhnacademy-be5-no24/no24-batch/assets/43560497/3fd2c1b4-4f80-4889-9536-752476c70d9c)
+
 
 > 1. 클라이언트의 요청은 NginX를 통해서 들어오고, 로드밸런서에서 Round Robin 방식으로 2개의 Front Server에 순서대로 보낸다.
 > 2. Front Server
