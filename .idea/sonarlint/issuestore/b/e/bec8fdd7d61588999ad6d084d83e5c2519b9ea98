@@ -1,14 +1,14 @@
 
 ˜
-java:S3655i"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(õĞ¹§ıÿÿÿÿ8™Ç£Ú÷1J$3b7e53bc-2a2d-49f7-af30-898958e3c548
-	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Şƒ€8Ç£Ú÷1J$bd8211bc-3e56-4e2c-9133-a30311aa9291
-r	java:S106/"+Replace this use of System.out by a logger.(Ëúÿÿÿÿ8¢Ç£Ú÷1J$b07dc876-57d1-4eb7-be36-d5be77c92630
-	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äúñ8¤Ç£Ú÷1J$c9b955d2-8965-4c96-989a-fe532fc2e116
+java:S3655i"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(õĞ¹§ıÿÿÿÿ8™Ç£Ú÷1J$da3cff3e-dab8-456e-823f-6a98d6fab65a
+	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Şƒ€8Ç£Ú÷1J$78e993d6-be45-47e2-a626-103ccae1e1bf
+r	java:S106/"+Replace this use of System.out by a logger.(Ëúÿÿÿÿ8¢Ç£Ú÷1J$fed397be-6eca-457d-914e-8d1250f9bfb0
+	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äúñ8¤Ç£Ú÷1J$2a95c584-5458-449e-bde1-8a3e0d6802ed
 •
-java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Äúñ8¥Ç£Ú÷1J$86882441-8c5e-44a6-ba9c-09f4e70859e6
+java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Äúñ8¥Ç£Ú÷1J$4dec4082-bb58-4b86-a3fc-82c3f66322f2
 ^
-java:S3626W"Remove this redundant jump.(ÉŠ©ƒ8¦Ç£Ú÷1J$df8019dd-583a-4353-988f-4075d5dee7f8
+java:S3626W"Remove this redundant jump.(ÉŠ©ƒ8¦Ç£Ú÷1J$9c753e08-9c33-4c7e-bdf0-79362707b036
 ˆ
-java:S1612Z"@Replace this lambda with method reference 'Orders::getTotalFee'.(Èø¤Çúÿÿÿÿ8«Ç£Ú÷1J$4b9c9622-bb40-4325-a610-2174f0e11ed4
+java:S1612Z"@Replace this lambda with method reference 'Orders::getTotalFee'.(Èø¤Çúÿÿÿÿ8«Ç£Ú÷1J$a6e0d0ee-d7d8-4d72-b9c4-85e2ea8964b3
 •
-java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÊåÄÃ8­Ç£Ú÷1J$b641265a-36ff-431a-8c7d-a0b2167e8e8e
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÊåÄÃ8­Ç£Ú÷1J$d2fe9c4d-1cba-4e38-9d54-570596d751b9
