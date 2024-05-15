@@ -135,7 +135,7 @@ public class Scheduler {
 
             if (order.getOrderState() == Orders.OrderState.SHIPPING) {
                 LocalDate now = LocalDate.now();
-                if (now.equals(order.getShipDate())) {
+                if (now.plusDays(1).isBefore(order.getShipDate())) {
                     order.modifyState(Orders.OrderState.COMPLETED);
                     ordersRepository.save(order);
                 }
