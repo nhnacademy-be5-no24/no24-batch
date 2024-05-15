@@ -1,0 +1,14 @@
+
+˜
+java:S3655i"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(õĞ¹§ıÿÿÿÿ8“ÀÎØ÷1J$b03394b2-aeab-4440-958f-42bbc57d9ca8
+	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Şƒ€8Ç˜ÏØ÷1J$4a1c6c56-39df-4045-bba9-2b745006d7f2
+r	java:S106/"+Replace this use of System.out by a logger.(Ëúÿÿÿÿ8€Ñ³Ø÷1J$a26d87ce-a6e5-4e79-825a-f85c1b7b0f9a
+	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äúñ8Ñ³Ø÷1J$6c7df428-608c-4582-a241-8f6d61819a2e
+•
+java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Äúñ8‚Ñ³Ø÷1J$5f207ae2-77b1-4505-8b4e-f8c197a0ed9a
+^
+java:S3626W"Remove this redundant jump.(ÉŠ©ƒ8ƒÑ³Ø÷1J$341eb539-be58-4450-bc9d-2a179821598b
+ˆ
+java:S1612Z"@Replace this lambda with method reference 'Orders::getTotalFee'.(Èø¤Çúÿÿÿÿ8¥ÀÎØ÷1J$cf80f430-3272-439a-9bf4-1de6c98e7884
+•
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÊåÄÃ8†Ñ³Ø÷1J$6b7fa9d3-a273-4f48-87e0-c1788f90492e
