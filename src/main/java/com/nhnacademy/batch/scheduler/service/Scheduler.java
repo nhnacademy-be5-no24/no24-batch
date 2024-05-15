@@ -42,9 +42,8 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 0 * * *")
     public void Loader() {
-        System.out.println("dormancy update");
+        log.warn("dormancy update");
         LocalDateTime todayDate = LocalDateTime.now().withSecond(0).withNano(0).minusMonths(6);
-        System.out.println("scheduler 반복" + LocalTime.now().withSecond(0).withNano(0));
 
         List<Member> memberList = memberRepository.findByLastLoginAt(todayDate);
         if (memberList.isEmpty()) {
@@ -73,7 +72,7 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 * * * *")
     public void Loader1() {
-        System.out.println("grade update");
+        log.warn("grade update");
         List<Grade> grades = gradeRepository.findAll().stream()
                 .sorted((a, b) -> (int) (a.getGradeId() - b.getGradeId()))
                 .collect(Collectors.toList());
@@ -119,7 +118,7 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 * * * *")
     public void deliveryLoader() {
-        System.out.println("delivery update");
+        log.warn("delivery update");
         List<Orders> ordersList = ordersRepository.findAll();
 
         for (Orders order : ordersList) {
@@ -151,17 +150,5 @@ public class Scheduler {
                 }
             }
         }
-    }
-
-
-    /**
-     * 10초마다 health check
-     *
-     * @author : 박병휘
-     * @date : 2024/05/16
-     */
-    @Scheduled(cron = "*/10 * * * * *")
-    public void healthCheck() {
-        System.out.println(LocalDateTime.now() + "health check");
     }
 }
