@@ -118,8 +118,9 @@ public class Scheduler {
      * @author : 강병구
      * @date : 2024/05/15
      */
-    @Scheduled(cron = "0 */5 * * * *")
+    @Scheduled(cron = "0 0 * * * *")
     public void deliveryLoader() {
+        System.out.println("delivery 실행");
         List<Orders> ordersList = ordersRepository.findAll();
 
         for (Orders order : ordersList) {
