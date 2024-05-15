@@ -152,4 +152,16 @@ public class Scheduler {
             }
         }
     }
+
+
+    /**
+     * 10초마다 health check
+     *
+     * @author : 박병휘
+     * @date : 2024/05/16
+     */
+    @Scheduled(cron = "*/10 * * * * *")
+    public void healthCheck() {
+        System.out.println(LocalDateTime.now() + "health check");
+    }
 }
