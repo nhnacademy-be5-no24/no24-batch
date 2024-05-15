@@ -40,7 +40,7 @@ public class Scheduler {
      * @Author : 김병주
      * @Date : 2024/04/27
      */
-    @Scheduled(cron = "0 0 0 0/1 * *")
+    @Scheduled(cron = "0 0 0 * * *")
     public void Loader() {
         LocalDateTime todayDate = LocalDateTime.now().withSecond(0).withNano(0).minusMonths(6);
         log.info(todayDate.toString());
@@ -73,7 +73,7 @@ public class Scheduler {
      * @Author : 김병주
      * @Date : 2024/05/10
      */
-    @Scheduled(cron = "0 0 0/1 * * *")
+    @Scheduled(cron = "0 0 * * * *")
     public void Loader1() {
         List<Grade> grades = gradeRepository.findAll().stream()
                 .sorted((a, b) -> (int) (a.getGradeId() - b.getGradeId()))
@@ -118,7 +118,7 @@ public class Scheduler {
      * @author : 강병구
      * @date : 2024/05/15
      */
-    @Scheduled(cron = "0 0 0/1 * * *")
+    @Scheduled(cron = "0 0 * * * *")
     public void deliveryLoader() {
         List<Orders> ordersList = ordersRepository.findAll();
 
