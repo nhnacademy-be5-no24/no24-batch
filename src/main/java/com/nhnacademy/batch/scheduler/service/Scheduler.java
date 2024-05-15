@@ -42,16 +42,14 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 0 * * *")
     public void Loader() {
+        System.out.println("dormancy update");
         LocalDateTime todayDate = LocalDateTime.now().withSecond(0).withNano(0).minusMonths(6);
-        log.info(todayDate.toString());
         System.out.println("scheduler 반복" + LocalTime.now().withSecond(0).withNano(0));
 
         List<Member> memberList = memberRepository.findByLastLoginAt(todayDate);
         if (memberList.isEmpty()) {
-            log.info("없음");
             return;
         }
-        log.info("발견 !!!!!!!!!!!! {}", memberList);
 
         for (Member member : memberList) {
             Member modifiedMember = Member.builder()
@@ -75,6 +73,7 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 * * * *")
     public void Loader1() {
+        System.out.println("grade update");
         List<Grade> grades = gradeRepository.findAll().stream()
                 .sorted((a, b) -> (int) (a.getGradeId() - b.getGradeId()))
                 .collect(Collectors.toList());
@@ -120,7 +119,7 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 * * * *")
     public void deliveryLoader() {
-        System.out.println("delivery 실행");
+        System.out.println("delivery update");
         List<Orders> ordersList = ordersRepository.findAll();
 
         for (Orders order : ordersList) {
