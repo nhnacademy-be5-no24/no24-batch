@@ -80,8 +80,9 @@ public class Orders {
     @JsonManagedReference
     private List<OrderDetail> orderDetails = new ArrayList<>();
 
-    public void modifyState(OrderState orderState){
+    public Orders modifyState(OrderState orderState){
         this.orderState = orderState;
+        return this;
     }
 
 

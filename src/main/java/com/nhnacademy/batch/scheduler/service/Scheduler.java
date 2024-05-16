@@ -19,6 +19,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -116,38 +117,28 @@ public class Scheduler {
      * @author : 강병구
      * @date : 2024/05/15
      */
-    @Scheduled(cron = "0 */1 * * * *")
+    @Scheduled(cron = " * */10 * * * *")
     public void deliveryLoader() {
         log.warn("delivery update");
         List<Orders> ordersList = ordersRepository.findAll();
 
         for (Orders order : ordersList) {
-            if (order.getOrderState() == Orders.OrderState.WAITING) {
-                LocalDateTime orderDate = order.getOrderDate();
-                LocalDateTime now = LocalDateTime.now();
 
-                if (orderDate.plusDays(1).isBefore(now)) {
-                    order.modifyState(Orders.OrderState.SHIPPING);
-                    ordersRepository.save(order);
-                }
+            LocalDate shipDate = order.getShipDate();
+            LocalDate now = LocalDate.now();
+
+            long daysBetween = ChronoUnit.DAYS.between(shipDate, now);
+
+            if (-2 <= daysBetween && daysBetween < -1) {
+                ordersRepository.save(order.modifyState(Orders.OrderState.SHIPPING));
             }
 
-            if (order.getOrderState() == Orders.OrderState.SHIPPING) {
-                LocalDate shipDate = order.getShipDate();
-                LocalDate now = LocalDate.now();
-                if (shipDate.plusDays(1).isBefore(now)) {
-                    order.modifyState(Orders.OrderState.COMPLETED);
-                    ordersRepository.save(order);
-                }
+            if (daysBetween >= 0 && daysBetween <= 1) {
+                ordersRepository.save(order.modifyState(Orders.OrderState.COMPLETED));
             }
 
-            if (order.getOrderState() == Orders.OrderState.COMPLETED) {
-                LocalDate shipDate = order.getShipDate();
-                LocalDate now = LocalDate.now();
-                if (shipDate.plusDays(3).isBefore(now)) {
-                    order.modifyState(Orders.OrderState.PURCHASE_CONFIRMED);
-                    ordersRepository.save(order);
-                }
+            if (daysBetween >= 3) {
+                ordersRepository.save(order.modifyState(Orders.OrderState.PURCHASE_CONFIRMED));
             }
         }
     }
