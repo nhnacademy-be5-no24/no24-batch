@@ -116,7 +116,7 @@ public class Scheduler {
      * @author : 강병구
      * @date : 2024/05/15
      */
-    @Scheduled(cron = "0 */2 * * * *")
+    @Scheduled(cron = "0 */1 * * * *")
     public void deliveryLoader() {
         log.warn("delivery update");
         List<Orders> ordersList = ordersRepository.findAll();
